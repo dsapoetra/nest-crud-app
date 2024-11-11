@@ -15,4 +15,14 @@ describe('TasksService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should create a task', () => {
+    const task = service.createTask('Test title', 'Test description');
+    expect(task).toEqual({
+      id: 1,
+      title: 'Test title',
+      description: 'Test description',
+      status: 'OPEN',
+    });
+  });
 });
